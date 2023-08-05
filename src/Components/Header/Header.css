@@ -1,0 +1,23 @@
+.header{
+    height: 80px;
+    background: #1C2B35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+nav.header img{
+    width: 140px;
+    height: 40px;
+    font-size: 30px;
+}
+nav.header a{
+    color: #FFF;
+    margin-right: 30px;
+    font-family: Lato;
+    font-size: 17px;
+}
+nav.header a:hover{
+    color:orangered;
+}
