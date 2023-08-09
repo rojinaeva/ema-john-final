@@ -19,10 +19,43 @@ const Shop = () => {
        setCart(newCart);
        addToDb(product.id);
     }
+    // useEffect(()=>{
+    //   // console.log(products);
+    //   const storedCart=getShoppingCart();
+    //   const savedCart=[];
+    //   // step 1:get id
+    //   for(const id in storedCart){
+    //     // console.log(id);
+    //     // step 2:get the product by using id
+    //     const savedProduct=products.find(product=>product.id===id);
+    //     // step 3:get quantity of the product
+    //     if(savedProduct){
+    //       const quantity=storedCart[id];
+    //       savedProduct.quantity=quantity;
+    //       // step 4:add the savedProduct to the savedcart
+    //       savedCart.push(savedProduct);
+    //     }
+    //     // step 5:set the cart 
+    //     setCart(savedCart);
+        
+    //   }
+    // },[products])
     useEffect(()=>{
-      const storedData=getShoppingCart();
-      console.log(storedData);
-    },[])
+      const storedCart=getShoppingCart();
+      const savedCart=[];
+      // step 1:get id from storedCart 
+      for(const id in storedCart){
+      //  step 2:get product from products by using id in storedCart 
+      const addedProduct=products.find(product=>product.id===id);
+      if(addedProduct){
+        // step 3:get quantity of the product 
+        const quantity=storedCart[id];
+        addedProduct.quantity=quantity;
+        savedCart.push(addedProduct);
+      }
+      setCart(savedCart);
+      }
+    },[products])
    
     return (
         <div className='shop-container'>
