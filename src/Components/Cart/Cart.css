@@ -11,3 +11,14 @@
     font-size: 21px;
     
 }
+.btn-clear-cart{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+    background: #FF3030;
+}
+.btn-clear-cart span{
+    color: #FFF;
+    font-size: 20px;
+}
