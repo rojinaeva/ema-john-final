@@ -1,3 +1,20 @@
 .review-container{
     margin:50px auto;
 }
+.btn-checkout{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+    background: #F90;
+    padding:16px;
+}
+.btn-checkout span{
+    
+        color: #FFF;
+        font-size: 20px;
+}
+.icon-style{
+    color:white;
+}

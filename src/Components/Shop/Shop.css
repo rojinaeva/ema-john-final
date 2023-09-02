@@ -8,3 +8,16 @@
     gap:45px;
     padding: 50px;
 }
+
+.btn-review-order{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+    background: #F90;
+}
+.btn-review-order span{
+    color: #FFF;
+    font-size: 20px;
+}
