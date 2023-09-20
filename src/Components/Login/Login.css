@@ -1,6 +1,6 @@
 .form-container{
     width: 500px;
-    height: 600px;
+    /* height: 600px; */
     border-radius: 8px;
     border: 1px solid #95A0A7;
     background: #FFF;
@@ -50,4 +50,7 @@
   }
   .btn-submit:hover{
     background: rgba(255, 153, 0, 0.60);
+  }
+  .navigate-link{
+    text-align: center;
   }

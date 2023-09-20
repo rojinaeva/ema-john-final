@@ -15,6 +15,7 @@ import Orders from './Components/Orders/Orders.jsx';
 import cartProductsLoader from './Loaders/cartProductsLoader.js';
 import Checkout from './Components/Checkout/Checkout.jsx';
 import Signup from './Components/Signup/Signup.jsx';
+import AuthProvider from './Components/Providers/AuthProvider.jsx';
 
 const router=createBrowserRouter([
   {
@@ -57,6 +58,8 @@ const router=createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+     <AuthProvider>
+       <RouterProvider router={router} />
+     </AuthProvider>
   </React.StrictMode>,
 )
