@@ -14,6 +14,7 @@ import NotFound from './Components/NotFound/NotFound.jsx';
 import Orders from './Components/Orders/Orders.jsx';
 import cartProductsLoader from './Loaders/cartProductsLoader.js';
 import Checkout from './Components/Checkout/Checkout.jsx';
+import Signup from './Components/Signup/Signup.jsx';
 
 const router=createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router=createBrowserRouter([
       {
         path:'/login',
        element:<Login></Login>
+      },
+      {
+        path:'/signup',
+       element:<Signup></Signup>
       },
       {
         path:'*',
