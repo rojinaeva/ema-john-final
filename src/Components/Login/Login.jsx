@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
+  const [error,setError]=useState('');
+  const navigate=useNavigate();
+  const {signIn}=useContext(AuthContext);
+    const handleSignIn=(event)=>{
+        event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(email,password);
+    
+        
+       signIn(email,password)
+       .then(result=>{
+        const loggedUser=result.user;
+        console.log(loggedUser);
+        form.reset();
+        navigate('/');
+      })
+      .catch(error=>{
+        console.log(error.message);
+        // setError(error.message);
+      })
+
+    }
     return (
         <div className='form-container'>
             <h3 className='form-title'>Please Login</h3>
-            <form>
+            <form onSubmit={handleSignIn}>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="" placeholder='Enter your email' required/>
@@ -18,6 +43,7 @@ const Login = () => {
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
             <p className='navigate-link'><small>New to Ema-john? <Link to='/signup'>Create New Account</Link></small></p>
+            {/* <p className='text-error'>{error}</p> */}
         </div>
     );
 };
